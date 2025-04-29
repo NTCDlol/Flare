@@ -1,0 +1,44 @@
+dynamic = false
+
+# This is a memory management demonstration program in Flare
+
+# Variable declarations
+str.message = "Memory management demo"
+int.x = 10
+fl.pi = 3.14159
+bin.16.value = 0xFFFF
+act.flag = true
+
+# Display message
+str.video++ = "M"
+str.video++ = "e"
+str.video++ = "m"
+str.video++ = "o"
+str.video++ = "r"
+str.video++ = "y"
+str.video++ = " "
+str.video++ = "D"
+str.video++ = "e"
+str.video++ = "m"
+str.video++ = "o"
+str.video++ = "\n"
+
+# Allocate memory blocks
+mem("Integer variable x", auto, 1)
+mem("Float variable pi", auto, 2)
+virmem("Binary value", auto, 3)
+
+# Do some work with the memory
+# (In a real program, we would manipulate the memory here)
+
+# Free the memory
+frmem(1, 0)
+frmem(2, 0)
+frmem(3, 0)
+
+# Display architecture
+arch()
+
+# End program
+warn("Memory demo completed successfully")
+allstop

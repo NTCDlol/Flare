@@ -1,0 +1,18 @@
+dynamic = false
+
+# This is a simple Hello World program in Flare static mode
+
+str.video++ = "H"
+str.video++ = "e"
+str.video++ = "l"
+str.video++ = "l"
+str.video++ = "o"
+str.video++ = ","
+str.video++ = " "
+str.video++ = "W"
+str.video++ = "o"
+str.video++ = "r"
+str.video++ = "l"
+str.video++ = "d"
+str.video++ = "!"
+str.video++ = "\n"

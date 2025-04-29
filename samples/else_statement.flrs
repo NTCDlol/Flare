@@ -1,0 +1,26 @@
+dynamic = false
+
+# This is a demonstration of if-else statements in Flare
+
+# Variable declarations
+str.message = "If-Else statement demo"
+int.a = 5
+int.b = 10
+
+# Display message
+str.video++ = "If-Else Statement Demo\n"
+
+# Compare a and b with else clause
+if (a > b) {
+    str.video++ = "a is greater than b\n"
+}
+else {
+    str.video++ = "a is not greater than b\n"
+}
+
+# Display architecture
+arch()
+
+# End program
+warn("If-Else statement demo completed")
+allstop

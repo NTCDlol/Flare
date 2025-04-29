@@ -1,0 +1,40 @@
+dynamic = true
+
+# This is a demonstration of dynamic mode in Flare with FlameMemory
+
+# Display message
+str.video++ = "Dynamic Mode Demo\n"
+
+# Create a FlameMemory object
+fmem.create("myData", 2048)
+
+# Store values in FlameMemory
+fmem.write("myData", "key1", "Hello from FlameMemory!")
+fmem.write("myData", "key2", 42)
+fmem.write("myData", "key3", 3.14159)
+
+# Read values from FlameMemory
+str.value1 = fmem.read("myData", "key1")
+int.value2 = fmem.read("myData", "key2")
+float.value3 = fmem.read("myData", "key3")
+
+# Display the values
+str.video++ = "Value 1: "
+str.video++ = value1
+str.video++ = "\n"
+str.video++ = "Value 2: "
+str.video++ = value2
+str.video++ = "\n"
+str.video++ = "Value 3: "
+str.video++ = value3
+str.video++ = "\n"
+
+# Clean up FlameMemory
+fmem.destroy("myData")
+
+# Display architecture
+arch()
+
+# End program
+warn("Dynamic mode demo completed")
+allstop

@@ -1,0 +1,59 @@
+dynamic = false
+
+# This is a simple demonstration of if statements in Flare
+
+# Variable declarations
+str.message = "If statement demo"
+int.x = 10
+int.y = 5
+
+# Display message
+str.video++ = "I"
+str.video++ = "f"
+str.video++ = " "
+str.video++ = "S"
+str.video++ = "t"
+str.video++ = "a"
+str.video++ = "t"
+str.video++ = "e"
+str.video++ = "m"
+str.video++ = "e"
+str.video++ = "n"
+str.video++ = "t"
+str.video++ = " "
+str.video++ = "D"
+str.video++ = "e"
+str.video++ = "m"
+str.video++ = "o"
+str.video++ = "\n"
+
+# Compare x and y
+if (x > y) {
+    str.video++ = "x"
+    str.video++ = " "
+    str.video++ = "i"
+    str.video++ = "s"
+    str.video++ = " "
+    str.video++ = "g"
+    str.video++ = "r"
+    str.video++ = "e"
+    str.video++ = "a"
+    str.video++ = "t"
+    str.video++ = "e"
+    str.video++ = "r"
+    str.video++ = " "
+    str.video++ = "t"
+    str.video++ = "h"
+    str.video++ = "a"
+    str.video++ = "n"
+    str.video++ = " "
+    str.video++ = "y"
+    str.video++ = "\n"
+}
+
+# Display architecture
+arch()
+
+# End program
+warn("If statement demo completed")
+allstop

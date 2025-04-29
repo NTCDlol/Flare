@@ -1,0 +1,25 @@
+dynamic = false
+
+# This is a demonstration of for loops in Flare
+
+# Variable declarations
+str.message = "For loop demo"
+int.i = 0
+int.max = 5
+
+# Display message
+str.video++ = "For Loop Demo\n"
+
+# Simple for loop from 0 to 4
+for (i = 0; i < max; i++) {
+    str.video++ = "Loop iteration: "
+    str.video++ = i
+    str.video++ = "\n"
+}
+
+# Display architecture
+arch()
+
+# End program
+warn("For loop demo completed")
+allstop

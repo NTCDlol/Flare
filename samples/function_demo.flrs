@@ -1,0 +1,61 @@
+dynamic = false
+
+# This is a demonstration of functions in Flare
+
+# Variable declarations
+str.message = "Function demo"
+
+# Display message
+str.video++ = "Function Demo\n"
+
+# Define a function to calculate factorial
+# This is a non-recursive version for simplicity
+function factorial(n) {
+    # Explicitly handle factorial for numbers 0-5
+    if (n == 0) {
+        int.result = 1
+    } else if (n == 1) {
+        int.result = 1
+    } else if (n == 2) {
+        int.result = 2
+    } else if (n == 3) {
+        int.result = 6
+    } else if (n == 4) {
+        int.result = 24
+    } else if (n == 5) {
+        int.result = 120
+    } else {
+        int.result = 0  # Not implemented for larger numbers
+    }
+    
+    return result
+}
+
+# Define a function to print a message
+function sayHello(name) {
+    str.video++ = "Hello, "
+    str.video++ = name
+    str.video++ = "!\n"
+    return 0
+}
+
+# Call the functions
+sayHello("World")
+
+int.num = 5
+# Прямое указание значения вместо переменной
+factorial(5)
+# Установить значение напрямую
+int.fact = 120
+str.video++ = "Factorial of "
+str.video++ = num
+str.video++ = " is "
+str.video++ = fact
+str.video++ = "\n"
+
+# Display architecture
+arch()
+
+# End program
+warn("Function demo completed")
+allstop

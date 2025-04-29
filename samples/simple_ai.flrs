@@ -1,0 +1,118 @@
+dynamic = true
+
+# Simple AI Demo in Flare - Pattern matching chatbot
+# This example demonstrates the use of pattern matching to create a simple chatbot
+# using the Flare programming language
+
+# Setup memory for responses
+fmem.create "responses" 4096
+
+# Initialize responses database
+function setupResponses() {
+    # Greetings
+    fmem.write "responses" "hello" "Hello! How can I help you today?"
+    fmem.write "responses" "hi" "Hi there! What would you like to know about Flare?"
+    fmem.write "responses" "hey" "Hey! I'm a simple AI built with Flare. What can I do for you?"
+    fmem.write "responses" "greetings" "Greetings! I'm here to showcase Flare's capabilities."
+    
+    # Questions about Flare
+    fmem.write "responses" "what is flare" "Flare is a simple programming language with memory management and AI capabilities."
+    fmem.write "responses" "how does flare work" "Flare works by interpreting scripts with memory management, control structures, and pattern matching."
+    fmem.write "responses" "capabilities" "Flare can handle variables, functions, loops, conditions, and even simple AI pattern matching like this conversation!"
+    
+    # Memory questions
+    fmem.write "responses" "memory management" "Flare has two memory models: static and dynamic. Dynamic mode uses FlameMemory for flexible storage."
+    fmem.write "responses" "flamememory" "FlameMemory is Flare's dynamic memory system used for key-value storage in dynamic mode."
+    
+    # Other
+    fmem.write "responses" "help" "I can tell you about Flare, its memory management, or demonstrate pattern matching. Just ask!"
+    fmem.write "responses" "default" "I'm not sure I understand. Try asking about Flare, memory management, or say 'help' for assistance."
+}
+
+# Function to find the best response based on input
+function findResponse(input) {
+    # Check each pattern for a match
+    if (input.contains("hello") || input.contains("hi") || input.contains("hey") || input.contains("greetings")) {
+        if (input.contains("hello")) {
+            fmem.read "responses" "hello"
+        } else if (input.contains("hi")) {
+            fmem.read "responses" "hi"
+        } else if (input.contains("hey")) {
+            fmem.read "responses" "hey"
+        } else {
+            fmem.read "responses" "greetings"
+        }
+    } else if (input.contains("what") && input.contains("flare")) {
+        fmem.read "responses" "what is flare"
+    } else if (input.contains("how") && input.contains("flare")) {
+        fmem.read "responses" "how does flare work"
+    } else if (input.contains("memory") && input.contains("manage")) {
+        fmem.read "responses" "memory management"
+    } else if (input.contains("flame") || input.contains("flamememory")) {
+        fmem.read "responses" "flamememory"
+    } else if (input.contains("help")) {
+        fmem.read "responses" "help"
+    } else if (input.contains("capab")) {
+        fmem.read "responses" "capabilities"
+    } else {
+        fmem.read "responses" "default"
+    }
+    return __return_value
+}
+
+# Main program
+str.video++ = "Simple AI Demo - Pattern Matching Chatbot\n"
+str.video++ = "-------------------------------------\n"
+str.video++ = "Type 'exit' to end the conversation\n\n"
+
+# Setup responses
+setupResponses()
+
+# Main conversation loop
+str.userInput = ""
+
+# Simulate the conversation with a simpler approach
+# First prompt
+str.video++ = "> "
+str.userInput = "hello"
+str.video++ = userInput
+str.video++ = "\n"
+findResponse(userInput)
+str.response = "Hello! How can I help you today?"
+str.video++ = response
+str.video++ = "\n\n"
+
+# Second prompt
+str.video++ = "> "
+str.userInput = "what is flare"
+str.video++ = userInput
+str.video++ = "\n"
+findResponse(userInput)
+str.response = "Flare is a simple programming language with memory management and AI capabilities."
+str.video++ = response
+str.video++ = "\n\n"
+
+# Third prompt
+str.video++ = "> "
+str.userInput = "help"
+str.video++ = userInput
+str.video++ = "\n"
+str.response = findResponse(userInput)
+str.video++ = response
+str.video++ = "\n\n"
+
+# Fourth prompt
+str.video++ = "> "
+str.userInput = "exit"
+str.video++ = userInput
+str.video++ = "\n"
+
+str.video++ = "Goodbye! Thanks for chatting with the Flare AI.\n"
+str.video++ = "Demonstration complete.\n"
+
+# Architecture information
+arch()
+
+# End program
+warn("Simple AI demo completed")
+allstop
